@@ -1,5 +1,6 @@
 import React, {Component, useState} from "react";
 import '../styles/App.css';
+import slides from '../data';
 
 // const App = () => {
 //   return (
@@ -30,8 +31,8 @@ const App = (props) => {
   
   return (
     <>
-      <h1>{props.slides.title}</h1>
-      <p>{props.slides.text}</p>
+      <h1 data-testid="title">{props.slides.title}</h1>
+      <p data-testid="text">{props.slides.text}</p>
       <button data-testid="button-next" disabled={slideNumber===props.slides.length-1? true:false} onClick={next}>Next</button>
       <button data-testid="button-prev" disabled={slideNumber===0? true:false} onClick={prev}>Prev</button>
       <button data-testid="button-restart" disabled={slideNumber===0? true:false} onClick={restart}>Restart</button>
