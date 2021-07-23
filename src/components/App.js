@@ -14,16 +14,16 @@ import slides from '../data';
 const App = () => {
   let Slide = slides.map((data) => data);
   
-  const[slide, setSlide] = useState(Slide[0]);
-  const[slideNumber,setSlideNumber] = useState(0);
-  
+  let [slide, setSlide] = useState(Slide[0]);
+  let [slideNumber,setSlideNumber] = useState(0);
+  console.log(Slide[slideNumber]);
   function next(){
-    setSlideNumber(slideNumber+1);
+    setSlideNumber(++slideNumber);
     setSlide(Slide[slideNumber])
   }
 
   function prev(){
-    setSlideNumber(slideNumber-1);
+    setSlideNumber(--slideNumber);
     setSlide(Slide[slideNumber])
   }
 
