@@ -34,7 +34,7 @@ const App = (props) => {
       <p>{props.slides.text}</p>
       <button data-testid="button-next" disabled={slideNumber===props.slides.length-1? true:false} onClick={next}>Next</button>
       <button data-testid="button-prev" disabled={slideNumber===0? true:false} onClick={prev}>Prev</button>
-      <button data-testid="button-restart" onClick={restart}>Restart</button>
+      <button data-testid="button-restart" disabled={slideNumber===0? true:false} onClick={restart}>Restart</button>
     </>
   )
 }
