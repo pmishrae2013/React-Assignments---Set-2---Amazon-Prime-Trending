@@ -16,7 +16,7 @@ const App = () => {
   
   let [slide, setSlide] = useState(Slide[0]);
   let [slideNumber,setSlideNumber] = useState(0);
-  console.log(Slide[slideNumber]);
+//   console.log(Slide[slideNumber]);
   function next(){
     setSlideNumber(++slideNumber);
     setSlide(Slide[slideNumber])
@@ -28,7 +28,8 @@ const App = () => {
   }
 
   function restart(){
-    setSlideNumber(0)
+    setSlideNumber(0);
+    setSlide(Slide[0])
   }
   
   return (
