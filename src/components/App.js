@@ -11,18 +11,20 @@ import slides from '../data';
 
 // export default App;
 
-const App = (props) => {
-  const[slide, setSlide] = useState(props.slides[0]);
+const App = () => {
+  let Slide = slides.map((data) => data);
+  
+  const[slide, setSlide] = useState(Slide[0]);
   const[slideNumber,setSlideNumber] = useState(0);
-
+  
   function next(){
     setSlideNumber(slideNumber+1);
-    setSlide(props.slides[slideNumber])
+    setSlide(Slide[slideNumber])
   }
 
   function prev(){
     setSlideNumber(slideNumber-1);
-    setSlide(props.slides[slideNumber])
+    setSlide(Slide[slideNumber])
   }
 
   function restart(){
@@ -31,9 +33,9 @@ const App = (props) => {
   
   return (
     <>
-      <h1 data-testid="title">{slide.title}</h1>
-      <p data-testid="text">{slide.text}</p>
-      <button data-testid="button-next" disabled={slideNumber===props.slides.length-1? true:false} onClick={next}>Next</button>
+      <h1>{slide.title}</h1>
+      <p>{slide.text}</p>
+      <button data-testid="button-next" disabled={slideNumber===Slide.length-1? true:false} onClick={next}>Next</button>
       <button data-testid="button-prev" disabled={slideNumber===0? true:false} onClick={prev}>Prev</button>
       <button data-testid="button-restart" disabled={slideNumber===0? true:false} onClick={restart}>Restart</button>
     </>
